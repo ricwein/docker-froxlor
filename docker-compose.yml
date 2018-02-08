@@ -1,0 +1,19 @@
+version: '2.0'
+
+services:
+  froxlor:
+    build: .
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ./froxlor:/var/www/html/froxlor
+    links:
+      - db:database
+
+  db:
+    image: mariadb:latest
+    restart: always
+    env_file: db.env
+    volumes:
+      - ./database:/var/lib/mysql

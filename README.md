@@ -2,7 +2,7 @@
 
 # An experimental Froxlor Docker-Image
 
-This Images aims at providing a containerized [Forxlor Server](https://www.froxlor.org/), including all configurable services as Containers (which is currenlty **work in progress!**).
+This Images aims at providing a containerized [froxlor Server](https://www.froxlor.org/), including all configurable services as Containers (which is currenlty **work in progress!**).
 ## Docker-Hub
 
 [hub.docker.com/r/ricwein/froxlor/](https://hub.docker.com/r/ricwein/froxlor/)
@@ -15,10 +15,10 @@ This Images aims at providing a containerized [Forxlor Server](https://www.froxl
 The fastest way to getting started with froxlor is just using the following command to start a standalone container.
 
 ```shell
-docker run --name forxlor -d -p 8080:80 ricwein/froxlor:latest
+docker run --name froxlor -d -p 8080:80 ricwein/froxlor:latest
 ```
 
-However, this setup requires a separated mysql-server to host forxlors internal database. In addition, all configurations which are done through froxlor will **not persists** if you delete the container.
+However, this setup requires a separated mysql-server to host froxlors internal database. In addition, all configurations which are done through froxlor will **not persists** if you delete the container.
 
 ### Persistent usage
 
@@ -31,7 +31,7 @@ git clone --recursive https://github.com/ricwein/docker-froxlor
 cd docker-froxlor
 ```
 
-To allow a persistent usage of the containers, the froxlor source-code is added as an git-submodule, which is mounted as a volume into the container (`forxlor` dir). This also allows updating froxlor itself through the repository, without rebuilding the image. Next to froxlor, the mariadb volume is mounted into the `database` dir.
+To allow a persistent usage of the containers, the froxlor source-code is added as an git-submodule, which is mounted as a volume into the container (`froxlor` dir). This also allows updating froxlor itself through the repository, without rebuilding the image. Next to froxlor, the mariadb volume is mounted into the `database` dir.
 
 #### Preconfiguration (optional)
 
@@ -49,7 +49,7 @@ Done. Froxlor is now running and reachable under [localhost:8080](http://localho
 
 After starting froxlor the first time, it requires to be configured through its website:
 
-![Forxlor Setup Website](./images/setup.png)
+![Froxlor Setup Website](https://raw.githubusercontent.com/ricwein/docker-froxlor/master/images/setup.png)
 
 We can use the following default credentials (if we use the unchanged `docker-compose.yml` with the mariadb-container and default `db.env`)
 

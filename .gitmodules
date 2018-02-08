@@ -1,3 +1,4 @@
 [submodule "froxlor"]
 	path = froxlor
-	url = git@github.com:Froxlor/Froxlor.git
+	url = https://github.com/Froxlor/Froxlor.git
+
